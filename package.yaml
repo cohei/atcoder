@@ -58,3 +58,9 @@ executables:
   ARC045-B:
     source-dirs: app/AtCoderRegularContest045
     main: b.hs
+  AGC026-A:
+    source-dirs: app/AtCoderGrandContest026
+    main: a.hs
+  AGC026-B:
+    source-dirs: app/AtCoderGrandContest026
+    main: b.hs
