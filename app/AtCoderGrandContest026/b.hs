@@ -1,32 +1,35 @@
-import Control.Monad (replicateM_)
-import Data.List (find)
-import Data.Maybe (fromJust)
-
-import Debug.Trace
+import Control.Monad (replicateM, forM_)
 
 main :: IO ()
 main = do
-  t <- readLn
-  let
-    h = do
-      line <- getLine
-      let
-        answer = (\(a:b:c:d:_) -> if f a b c d then "Yes" else "No") . map read . words $ line
-      putStrLn answer
-  replicateM_ t h
+  lines' <- getNLine
+
+  forM_ lines' $ \line ->
+    putStrLn . (\(a:b:c:d:_) -> yesNo $ f a b c d) . map read . words $ line
+
+getNLine :: IO [String]
+getNLine = do
+  n <- readLn
+  replicateM n getLine
+
+yesNo :: Bool -> String
+yesNo b = if b then "Yes" else "No"
 
 f :: Int -> Int -> Int -> Int -> Bool
-f initial buy criterion add = g (initial - buy) criterion (add - buy) (- buy)
+f initial buy level restock
+  | buy > initial = False -- 即死
+  | buy > restock = False -- ジリ貧
+  | buy <= level = True -- 絶対死なない
+  | otherwise =
+    let
+      step = gcd buy restock -- mod buy で見ると、購入・補充はこのステップで動く
+    in
+      buy - step + initial `mod` step <= level
 
-g :: Int -> Int -> Int -> Int -> Bool
-g initial criterion plus minus =
-  (== initial) $ fromJust $ find (\n -> n < 0 || n == initial) $ tail $ iterate step initial
-  where
-    -- step n = traceShowId n + (if n <= criterion then plus else minus)
-    step n = n + (if n <= criterion then plus else minus)
-
+test :: Bool
 test = output == map (\(a, b, c, d) -> f a b c d) input
 
+input :: [(Int, Int, Int, Int)]
 input =
   [ (9, 7, 5, 9)
   , (9, 7, 6, 9)
@@ -44,6 +47,7 @@ input =
   , (1000000000000000000, 17, 15, 999999999999999985)
   ]
 
+output :: [Bool]
 output =
   [ False
   , True
