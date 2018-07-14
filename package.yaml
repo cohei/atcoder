@@ -1,0 +1,60 @@
+name: atcoder
+version: 0.1.0.0
+github: "cohei/atcoder"
+license: BSD3
+author: "TANIGUCHI Kohei"
+maintainer: "a.d.xvii.kal.mai@gmail.com"
+copyright: "2018 TANIGUCHI Kohei"
+
+extra-source-files:
+  - README.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description: Please see the README on GitHub at <https://github.com/githubuser/atcoder#readme>
+
+dependencies:
+  - base >= 4.7 && < 5
+  - array
+  - containers
+  - mtl
+
+executables:
+  ABC024-A:
+    source-dirs: app/AtCoderBeginnerContest024
+    main: a.hs
+  ABC024-B:
+    source-dirs: app/AtCoderBeginnerContest024
+    main: b.hs
+  ABC030-A:
+    source-dirs: app/AtCoderBeginnerContest030
+    main: a.hs
+  ABC030-B:
+    source-dirs: app/AtCoderBeginnerContest030
+    main: b.hs
+  ABC030-C:
+    source-dirs: app/AtCoderBeginnerContest030
+    main: c.hs
+  AGC014-A:
+    source-dirs: app/AtCoderGrandContest014
+    main: a.hs
+  AGC014-F:
+    source-dirs: app/AtCoderGrandContest014
+    main: f.hs
+  ARC028-A:
+    source-dirs: app/AtCoderRegularContest028
+    main: a.hs
+  ARC028-B:
+    source-dirs: app/AtCoderRegularContest028
+    main: b.hs
+  ARC045-A:
+    source-dirs: app/AtCoderRegularContest045
+    main: a.hs
+  ARC045-B:
+    source-dirs: app/AtCoderRegularContest045
+    main: b.hs
