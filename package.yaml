@@ -67,3 +67,9 @@ executables:
   AGC026-C:
     source-dirs: app/AtCoderGrandContest026
     main: c.hs
+  ABC104-A:
+    source-dirs: app/AtCoderBeginnerContest104
+    main: a.hs
+  ABC104-B:
+    source-dirs: app/AtCoderBeginnerContest104
+    main: b.hs
