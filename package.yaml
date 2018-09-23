@@ -85,3 +85,12 @@ executables:
   ABC105-D:
     source-dirs: app/AtCoderBeginnerContest105
     main: d.hs
+  ABC110-A:
+    source-dirs: app/AtCoderBeginnerContest110
+    main: a.hs
+  ABC110-B:
+    source-dirs: app/AtCoderBeginnerContest110
+    main: b.hs
+  ABC110-C:
+    source-dirs: app/AtCoderBeginnerContest110
+    main: c.hs
