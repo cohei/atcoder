@@ -87,3 +87,6 @@ executables:
   ABC110-C:
     source-dirs: app/AtCoderBeginnerContest110
     main: c.hs
+  ABC110-D:
+    source-dirs: app/AtCoderBeginnerContest110
+    main: d.hs
