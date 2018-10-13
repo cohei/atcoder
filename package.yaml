@@ -27,6 +27,12 @@ tests:
     dependencies:
       - atcoder
       - hspec
+  AGC028:
+    main: test.hs
+    source-dirs: src/AtCoderGrandContest028
+    dependencies:
+      - atcoder
+      - hspec
 
 executables:
   ABC024-A:
