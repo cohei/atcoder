@@ -1,4 +1,4 @@
-module Tenka1ProgrammerBeginnerContest.C where
+module Tenka1ProgrammerBeginnerContest.C (f) where
 
 import           Control.Arrow ((&&&))
 import           Control.Monad (replicateM)
@@ -23,9 +23,3 @@ coefficients n | n < 2 = undefined
 coefficients n = unzip $ zipWith ($) (cycle [id, swap]) $ map (id &&& negate) ns
   where
     ns = [1] ++ replicate (n - 2) 2 ++ [1]
-
-tests, test1, test2, test3 :: Bool
-tests = test1 && test2 && test3
-test1 = f 5 [6, 8, 1, 2, 3] == 21
-test2 = f 6 [3, 1, 4, 1, 5, 9] == 25
-test3 = f 3 [5, 5, 1] == 8

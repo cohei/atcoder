@@ -33,6 +33,12 @@ tests:
     dependencies:
       - atcoder
       - hspec
+  Tenka1:
+    main: Tenka1ProgrammerBeginnerContest.hs
+    source-dirs: test
+    dependencies:
+      - atcoder
+      - hspec
 
 executables:
   ABC024-A:
