@@ -22,14 +22,14 @@ library:
 
 tests:
   ABC112:
-    main: test.hs
-    source-dirs: src/AtCoderBeginnerContest112
+    main: AtCoderBeginnerContest112.hs
+    source-dirs: test
     dependencies:
       - atcoder
       - hspec
   AGC028:
-    main: test.hs
-    source-dirs: src/AtCoderGrandContest028
+    main: AtCoderGrandContest028.hs
+    source-dirs: test
     dependencies:
       - atcoder
       - hspec
