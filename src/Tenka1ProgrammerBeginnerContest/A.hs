@@ -1,4 +1,4 @@
-module Tenka1ProgrammerBeginnerContest.A (f) where
+module Tenka1ProgrammerBeginnerContest.A (main) where
 
 main :: IO ()
 main = putStrLn . f =<< getLine

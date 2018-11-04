@@ -1,4 +1,4 @@
-module Tenka1ProgrammerBeginnerContest.B (f) where
+module Tenka1ProgrammerBeginnerContest.B (main) where
 
 main :: IO ()
 main = do

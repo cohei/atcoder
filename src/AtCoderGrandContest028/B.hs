@@ -1,5 +1,5 @@
 {-# LANGUAGE RecordWildCards #-}
-module AtCoderGrandContest028.B where
+module AtCoderGrandContest028.B (main) where
 
 import Data.Tree
 import Control.Exception (assert)

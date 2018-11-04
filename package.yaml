@@ -14,7 +14,10 @@ description: Please see the README on GitHub at <https://github.com/cohei/atcode
 dependencies:
   - base >= 4.7 && < 5
   - array
+  - bytestring
   - containers
+  - hspec
+  - main-tester
   - mtl
 
 library:
@@ -26,19 +29,18 @@ tests:
     source-dirs: test
     dependencies:
       - atcoder
-      - hspec
   AGC028:
     main: AtCoderGrandContest028.hs
     source-dirs: test
     dependencies:
       - atcoder
-      - hspec
+      - heredoc
   Tenka1:
     main: Tenka1ProgrammerBeginnerContest.hs
     source-dirs: test
     dependencies:
       - atcoder
-      - hspec
+      - heredoc
 
 executables:
   ABC024-A:

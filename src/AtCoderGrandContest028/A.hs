@@ -1,4 +1,4 @@
-module AtCoderGrandContest028.A where
+module AtCoderGrandContest028.A (main, everyN) where
 
 import           Control.Exception (assert)
 import           Data.Maybe        (fromMaybe)

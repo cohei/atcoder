@@ -1,4 +1,4 @@
-module Tenka1ProgrammerBeginnerContest.C (f) where
+module Tenka1ProgrammerBeginnerContest.C (main) where
 
 import           Control.Arrow ((&&&))
 import           Control.Monad (replicateM)

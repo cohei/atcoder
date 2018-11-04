@@ -1,26 +1,63 @@
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE QuasiQuotes       #-}
 module Main where
 
-import Test.Hspec
+import           Test.Hspec               (describe, hspec, it, shouldBe)
+import           Text.Heredoc             (here)
 
-import qualified AtCoderGrandContest028.A as A
-import qualified AtCoderGrandContest028.B as B
+import qualified AtCoderGrandContest028.A as A (everyN, main)
+import qualified AtCoderGrandContest028.B as B (main)
+import           Test                     (shouldInteractAs)
 
 main :: IO ()
 main = hspec $ do
   describe "A" $ do
     describe "everyN" $ do
       it "take every n elements" $ do
-        A.everyN 3 [1..10] `shouldBe` [1, 4, 7, 10]
+        A.everyN 3 [1..10 :: Int] `shouldBe` [1, 4, 7, 10]
 
     it "Example 1" $ do
-      A.f 3 2 "acp" "ae" `shouldBe` Just 6
+      let
+        input = [here|3 2
+acp
+ae
+|]
+        output = [here|6
+|]
+      A.main `shouldInteractAs` (input, output)
     it "Example 2" $ do
-      A.f 6 3 "abcdef" "abc" `shouldBe` Nothing
+      let
+        input = [here|6 3
+abcdef
+abc
+|]
+        output = [here|-1
+|]
+      A.main `shouldInteractAs` (input, output)
     it "Example 3" $ do
-      A.f 15 9 "dnsusrayukuaiia" "dujrunuma" `shouldBe` Just 45
+      let
+        input = [here|15 9
+dnsusrayukuaiia
+dujrunuma
+|]
+        output = [here|45
+|]
+      A.main `shouldInteractAs` (input, output)
 
   describe "B" $ do
     it "Example 1" $ do
-      B.f [1, 2] `shouldBe` 9
+      let
+        input = [here|2
+1 2
+|]
+        output = [here|9
+|]
+      B.main `shouldInteractAs` (input, output)
     it "Example 2" $ do
-      B.f [1, 1, 1, 1] `shouldBe` 212
+      let
+        input = [here|4
+1 1 1 1
+|]
+        output = [here|212
+|]
+      B.main `shouldInteractAs` (input, output)
