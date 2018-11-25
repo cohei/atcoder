@@ -1,19 +1,18 @@
 module DwangoProgrammingContestV.A (main) where
 
-import           Data.List (genericLength, minimumBy)
+import           Data.List (minimumBy)
 import           Data.Ord  (comparing)
 
 main :: IO ()
 main = do
   n <- readLn
   as <- take n . map read . words <$> getLine
-  print $ f as
+  print $ f n as
 
-f :: [Int] -> Int
-f as =
+f :: Int -> [Int] -> Int
+f n as =
   fst .
-  minimumBy (comparing (abs . subtract average . fromIntegral . snd)) .
+  minimumBy (comparing (abs . subtract sum' . (n *) . snd)) .
   zip [0..] $ as
   where
-    average :: Double
-    average = fromIntegral (sum as) / genericLength as
+    sum' = sum as
