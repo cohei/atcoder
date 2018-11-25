@@ -1,7 +1,9 @@
 module DwangoProgrammingContestV.B (main) where
 
-import           Data.Bits ((.&.))
-import           Data.List (foldl1', inits, tails)
+import           Control.Monad (guard)
+import           Data.Bits     (bit, (.&.))
+import           Data.List     (inits, mapAccumL, tails, unfoldr)
+import           Data.Tuple    (swap)
 
 main :: IO ()
 main = do
@@ -9,17 +11,23 @@ main = do
   as <- take n . map read . words <$> getLine
   print $ f k as
 
--- C004_scrambled 以降 TLE
 f :: Int -> [Int] -> Int
-f k =
-  maximum .
-  map (foldl1' (.&.)) .
-  combinations k .
-  map sum .
-  concatMap (tail . inits) .
-  init . tails
+f k as = sum $ snd $ mapAccumL g beautifulnesses bits
+  where
+    beautifulnesses = map sum . concatMap (tail . inits) . init . tails $ as
+    bits = reverse $ map bit [0 .. bitSize (maximum beautifulnesses)]
+    g bs i =
+      let
+        bs' = filter ((== i) . (.&. i)) bs
+      in
+        if length bs' >= k then (bs', i) else (bs, 0)
 
-combinations :: Int -> [a] -> [[a]]
-combinations 0 _      = [[]]
-combinations _ []     = []
-combinations n (x:xs) = map (x:) (combinations (n - 1) xs) ++ combinations n xs
+bitSize :: Int -> Int
+bitSize = length . toDigits 2
+
+toDigits :: Integral a => a -> a -> [a]
+toDigits base = reverse . unfoldr step
+  where
+    step n = do
+      guard $ n /= 0
+      return $ swap $ divMod n base
