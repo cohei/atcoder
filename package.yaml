@@ -25,31 +25,26 @@ library:
 
 tests:
   ABC112:
-    main: AtCoderBeginnerContest112.hs
-    source-dirs: test
+    main: test/AtCoderBeginnerContest112.hs
     dependencies:
       - atcoder
   AGC028:
-    main: AtCoderGrandContest028.hs
-    source-dirs: test
+    main: test/AtCoderGrandContest028.hs
     dependencies:
       - atcoder
       - heredoc
   Tenka1:
-    main: Tenka1ProgrammerBeginnerContest.hs
-    source-dirs: test
+    main: test/Tenka1ProgrammerBeginnerContest.hs
     dependencies:
       - atcoder
       - heredoc
   ABC113:
-    main: AtCoderBeginnerContest113.hs
-    source-dirs: test
+    main: test/AtCoderBeginnerContest113.hs
     dependencies:
       - atcoder
       - heredoc
   Dwango5:
-    main: DwangoProgrammingContestV.hs
-    source-dirs: test
+    main: test/DwangoProgrammingContestV.hs
     dependencies:
       - atcoder
       - heredoc
