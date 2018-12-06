@@ -3,7 +3,7 @@
 module Main where
 
 import           Test.Hspec               (describe, hspec, it, shouldBe)
-import           Text.Heredoc             (here)
+import           Text.Heredoc             (str)
 
 import qualified AtCoderGrandContest028.A as A (everyN, main)
 import qualified AtCoderGrandContest028.B as B (main)
@@ -18,46 +18,56 @@ main = hspec $ do
 
     it "Example 1" $ do
       let
-        input = [here|3 2
-acp
-ae
-|]
-        output = [here|6
-|]
+        input =
+          [str|3 2
+              |acp
+              |ae
+              |]
+        output =
+          [str|6
+              |]
       A.main `shouldInteractAs` (input, output)
     it "Example 2" $ do
       let
-        input = [here|6 3
-abcdef
-abc
-|]
-        output = [here|-1
-|]
+        input =
+          [str|6 3
+              |abcdef
+              |abc
+              |]
+        output =
+          [str|-1
+              |]
       A.main `shouldInteractAs` (input, output)
     it "Example 3" $ do
       let
-        input = [here|15 9
-dnsusrayukuaiia
-dujrunuma
-|]
-        output = [here|45
-|]
+        input =
+          [str|15 9
+              |dnsusrayukuaiia
+              |dujrunuma
+              |]
+        output =
+          [str|45
+              |]
       A.main `shouldInteractAs` (input, output)
 
   describe "B" $ do
     it "Example 1" $ do
       let
-        input = [here|2
-1 2
-|]
-        output = [here|9
-|]
+        input =
+          [str|2
+              |1 2
+              |]
+        output =
+          [str|9
+              |]
       B.main `shouldInteractAs` (input, output)
     it "Example 2" $ do
       let
-        input = [here|4
-1 1 1 1
-|]
-        output = [here|212
-|]
+        input =
+          [str|4
+              |1 1 1 1
+              |]
+        output =
+          [str|212
+              |]
       B.main `shouldInteractAs` (input, output)
