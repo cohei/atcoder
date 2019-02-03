@@ -52,6 +52,11 @@ tests:
     dependencies:
       - atcoder
       - heredoc
+  ABC117:
+    main: test/AtCoderBeginnerContest117.hs
+    dependencies:
+      - atcoder
+      - heredoc
 
 executables:
   ABC024-A:
