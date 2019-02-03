@@ -8,8 +8,8 @@ main :: IO ()
 main = do
   n <- readLn
   as <- map read . words <$> getLine
-  assert (length as == n) $ return ()
-  print $ f (as :: [Int])
+  assert (length as == n) $
+    print $ f (as :: [Int])
 
 f :: Integral a => [a] -> a
 f = undefined

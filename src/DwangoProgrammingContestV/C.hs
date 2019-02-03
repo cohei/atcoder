@@ -1,16 +1,15 @@
-{-# LANGUAGE BangPatterns #-}
 module DwangoProgrammingContestV.C (main) where
 
-import           Control.Exception (assert, evaluate)
+import           Control.Exception (assert)
 
 main :: IO ()
 main = do
   n <- readLn
   s <- getLine
-  evaluate $ assert (length s == n) ()
-  q <- readLn
-  ks <- take q . map read . words <$> getLine
-  putStr . unlines . map (show . (\k -> f k s)) $ ks
+  assert (length s == n) $ do
+    q <- readLn
+    ks <- take q . map read . words <$> getLine
+    putStr . unlines . map (show . (\k -> f k s)) $ ks
 
 f :: Int -> String -> Int
 f k = dmc . foldl g initialState . defer k

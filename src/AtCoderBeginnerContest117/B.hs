@@ -1,13 +1,13 @@
 module AtCoderBeginnerContest117.B (main) where
 
-import           Control.Monad (when)
+import           Control.Exception (assert)
 
 main :: IO ()
 main = do
   n <- readLn
   ls <- map read . words <$> getLine
-  when (length ls /= n) $ error "length ls /= n"
-  putStrLn $ if f ls then "Yes" else "No"
+  assert (length ls == n) $
+    putStrLn $ if f ls then "Yes" else "No"
 
 f :: [Int] -> Bool
 f xs = let (m, ys) = maxAndOthers xs in m < sum ys
