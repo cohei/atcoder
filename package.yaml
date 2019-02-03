@@ -12,6 +12,7 @@ extra-source-files:
 description: Please see the README on GitHub at <https://github.com/cohei/atcoder#readme>
 
 ghc-options:
+  - -optc-Wno-expansion-to-defined
   - -Wall
   - -fdefer-typed-holes
 
