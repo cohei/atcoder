@@ -7,6 +7,7 @@ import           Text.Heredoc                (str)
 
 import qualified AtCoderBeginnerContest117.A as A (main)
 import qualified AtCoderBeginnerContest117.B as B (main)
+import qualified AtCoderBeginnerContest117.C as C (main)
 import           Test                        (shouldInteractAs)
 
 main :: IO ()
@@ -78,3 +79,37 @@ main = hspec $ do
           [str|No
               |]
       B.main `shouldInteractAs` (input, output)
+
+  describe "C" $ do
+    it "Example 1" $ do
+      let
+        input =
+          [str|2 5
+              |10 12 1 2 14
+              |]
+        output =
+          [str|5
+              |]
+      C.main `shouldInteractAs` (input, output)
+
+    it "Example 2" $ do
+      let
+        input =
+          [str|3 7
+              |-10 -3 0 9 -100 2 17
+              |]
+        output =
+          [str|19
+              |]
+      C.main `shouldInteractAs` (input, output)
+
+    it "Example 3" $ do
+      let
+        input =
+          [str|100 1
+              |-100000
+              |]
+        output =
+          [str|0
+              |]
+      C.main `shouldInteractAs` (input, output)
