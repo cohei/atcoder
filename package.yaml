@@ -13,6 +13,7 @@ description: Please see the README on GitHub at <https://github.com/cohei/atcode
 
 ghc-options:
   - -Wall
+  - -fdefer-typed-holes
 
 dependencies:
   - base >= 4.7 && < 5
