@@ -1,4 +1,4 @@
-import Control.Monad (replicateM, forM_)
+import           Control.Monad (forM_, replicateM)
 
 main :: IO ()
 main = do

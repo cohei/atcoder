@@ -1,16 +1,15 @@
 {-# LANGUAGE RecordWildCards #-}
 module AtCoderGrandContest028.B (main) where
 
-import Data.Tree
-import Control.Exception (assert)
-import Control.Monad (join)
+import           Control.Exception (assert)
+import           Data.Tree
 
 main :: IO ()
 main = do
   n <- readLn
   as <- map read . words <$> getLine
   assert (length as == n) $ return ()
-  print $ f as
+  print $ f (as :: [Int])
 
 f :: Integral a => [a] -> a
 f = undefined
@@ -19,7 +18,7 @@ g :: Integral a => (Int, Int) -> [a] -> a
 g (begin, end) as = undefined
 
 next :: [a] -> [[a]]
-next [] = []
+next []     = []
 next (x:xs) = xs : map (x:) (next xs)
 
 -- >>> allSteps [1]

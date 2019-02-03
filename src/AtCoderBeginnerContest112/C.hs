@@ -1,6 +1,6 @@
 module AtCoderBeginnerContest112.C (main) where
 
-import Control.Monad (replicateM, forM_, guard)
+import           Control.Monad (forM_, guard, replicateM)
 
 main :: IO ()
 main = do

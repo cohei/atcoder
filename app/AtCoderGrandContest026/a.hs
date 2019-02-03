@@ -1,4 +1,4 @@
-import Data.List (group)
+import           Data.List (group)
 
 main :: IO ()
 main = do

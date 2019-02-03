@@ -1,6 +1,6 @@
 module Main where
 
-import Control.Applicative ((<$>))
+import           Control.Applicative ((<$>))
 
 main :: IO ()
 main = do

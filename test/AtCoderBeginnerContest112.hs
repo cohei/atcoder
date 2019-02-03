@@ -1,6 +1,6 @@
 module Main where
 
-import Test.Hspec
+import           Test.Hspec
 
 import qualified AtCoderBeginnerContest112.A as A
 

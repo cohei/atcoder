@@ -1,4 +1,4 @@
-import Data.Set (Set, empty, member, insert)
+import           Data.Set (Set, empty, insert, member)
 
 main :: IO ()
 main = do

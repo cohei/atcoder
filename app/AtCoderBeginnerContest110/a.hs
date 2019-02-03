@@ -1,6 +1,6 @@
 module Main where
 
-import Data.List (sort)
+import           Data.List (sort)
 
 main :: IO ()
 main = do

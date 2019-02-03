@@ -1,7 +1,7 @@
 module Main where
 
-import Data.List (unfoldr)
-import Data.Tuple (swap)
+import           Data.List  (unfoldr)
+import           Data.Tuple (swap)
 
 main :: IO ()
 main = do

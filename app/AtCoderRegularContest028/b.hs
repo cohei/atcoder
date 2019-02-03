@@ -1,5 +1,5 @@
-import Data.List (scanl, sortBy, inits)
-import Data.Ord (comparing)
+import           Data.List (inits, scanl, sortBy)
+import           Data.Ord  (comparing)
 
 main :: IO ()
 main = interact $ format f

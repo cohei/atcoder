@@ -1,10 +1,10 @@
 module Main where
 
-import Control.Applicative ((<$>))
-import Control.Monad (when)
-import Control.Monad.Reader (ReaderT, runReaderT)
-import Control.Monad.State (State, gets, runState)
-import Control.Monad.RWS
+import           Control.Applicative  ((<$>))
+import           Control.Monad        (when)
+import           Control.Monad.Reader (ReaderT, runReaderT)
+import           Control.Monad.RWS
+import           Control.Monad.State  (State, gets, runState)
 
 main :: IO ()
 main = do
