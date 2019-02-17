@@ -16,6 +16,17 @@ ghc-options:
   - -Wall
   - -fdefer-typed-holes
 
+  # https://downloads.haskell.org/~ghc/7.10.3/docs/html/users_guide/options-sanity.html
+  # The warnings that are not enabled by `-Wall`
+  - -fwarn-auto-orphans
+  - -fwarn-identities
+  - -fwarn-incomplete-record-updates
+  - -fwarn-incomplete-uni-patterns
+  - -fwarn-missing-exported-sigs
+  - -fwarn-missing-import-lists
+  - -fwarn-missing-local-sigs
+  - -fwarn-monomorphism-restriction
+
 dependencies:
   - base >= 4.7 && < 5
   - array

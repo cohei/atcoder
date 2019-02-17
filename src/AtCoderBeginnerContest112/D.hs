@@ -16,6 +16,7 @@ factors = map product . mapM (scanl (*) 1) . group . primeFactors
 primeFactors :: Integral a => a -> [a]
 primeFactors = primeFactors' primes
   where
+    primeFactors' :: Integral a => [a] -> a -> [a]
     primeFactors' pps@(p:ps) n
       | n < 2              = []
       | n < p ^ (2 :: Int) = [n]  -- stop early

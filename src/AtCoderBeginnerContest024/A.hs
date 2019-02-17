@@ -3,6 +3,7 @@ module AtCoderBeginnerContest024.A (main) where
 main :: IO ()
 main = interact $ (++ "\n") . show . total' . readInput
   where
+    total' :: (Num a, Ord a) => (a, a, a, a, a, a) -> a
     total' (childPrice, adultPrice, discount, group, childCount, adultCount) =
       total childPrice adultPrice discount group childCount adultCount
 

@@ -23,6 +23,7 @@ f n m = unModular $ g $ map (fromIntegral . length) $ group $ factors m
 factors :: Integral a => a -> [a]
 factors = factors' primes
   where
+    factors' :: Integral a => [a] -> a -> [a]
     factors' pps@(p:ps) n
       | n < 2              = []
       | n < p ^ (2 :: Int) = [n]  -- stop early
@@ -67,12 +68,14 @@ modularReciprocal modulus n = snd $ modularReciprocal' modulus n
   where
     -- modularReciprocal' n m = (x, y)
     -- n * x + m * y = 1
+    modularReciprocal' :: Integral a => a -> a -> (a, a)
     modularReciprocal' _ 0 = notCoprimeError
     modularReciprocal' _ 1 = (0, 1)
     modularReciprocal' m l = (y, x - q * y)
       where
         (q, r) = m `divMod` l
         (x, y) = modularReciprocal' l r
+    notCoprimeError :: a
     notCoprimeError =
       error $ unwords
         [ "divider"

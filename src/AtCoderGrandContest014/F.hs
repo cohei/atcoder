@@ -1,6 +1,6 @@
 module AtCoderGrandContest014.F (main) where
 
-import           Data.List
+import           Data.List (mapAccumL, partition)
 
 main :: IO ()
 main = do
@@ -20,6 +20,7 @@ f =
   snd .
   mapAccumL g 0
   where
+    g :: Ord a => a -> a -> (a, (a, Bool))
     g acc n = if isHigh then (n, (n, True)) else (acc, (n, False))
       where
         isHigh = n > acc

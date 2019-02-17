@@ -1,9 +1,12 @@
+{-# LANGUAGE ScopedTypeVariables #-}
 module DwangoProgrammingContestV.B (main) where
 
-import           Control.Monad (guard)
-import           Data.Bits     (bit, (.&.))
-import           Data.List     (inits, mapAccumL, tails, unfoldr)
-import           Data.Tuple    (swap)
+import           Control.Applicative (Alternative)
+import           Control.Monad       (guard)
+import           Data.Bits           (Bits, bit, (.&.))
+import           Data.Functor        (($>))
+import           Data.List           (inits, mapAccumL, tails, unfoldr)
+import           Data.Tuple          (swap)
 
 main :: IO ()
 main = do
@@ -16,6 +19,8 @@ f k as = sum $ snd $ mapAccumL g beautifulnesses bits
   where
     beautifulnesses = map sum . concatMap (tail . inits) . init . tails $ as
     bits = reverse $ map bit [0 .. bitSize (maximum beautifulnesses)]
+
+    g :: (Num a, Bits a) => [a] -> a -> ([a], a)
     g bs i =
       let
         bs' = filter ((== i) . (.&. i)) bs
@@ -25,9 +30,8 @@ f k as = sum $ snd $ mapAccumL g beautifulnesses bits
 bitSize :: Int -> Int
 bitSize = length . toDigits 2
 
-toDigits :: Integral a => a -> a -> [a]
+toDigits :: forall a. Integral a => a -> a -> [a]
 toDigits base = reverse . unfoldr step
   where
-    step n = do
-      guard $ n /= 0
-      return $ swap $ divMod n base
+    step :: Alternative m => a -> m (a, a)
+    step n = guard (n /= 0) $> swap (divMod n base)
