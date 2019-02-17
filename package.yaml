@@ -99,3 +99,8 @@ tests:
     dependencies:
       - atcoder
       - heredoc
+  ABC118:
+    main: test/AtCoderBeginnerContest118.hs
+    dependencies:
+      - atcoder
+      - heredoc
