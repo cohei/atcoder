@@ -1,8 +1,8 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE QuasiQuotes       #-}
-module Main where
+module DwangoProgrammingContestV (spec) where
 
-import           Test.Hspec                  (describe, hspec, it)
+import           Test.Hspec                  (Spec, describe, it)
 import           Text.Heredoc                (str)
 
 import qualified DwangoProgrammingContestV.A as A (main)
@@ -10,8 +10,8 @@ import qualified DwangoProgrammingContestV.B as B (main)
 import qualified DwangoProgrammingContestV.C as C (main)
 import           Test                        (shouldInteractAs)
 
-main :: IO ()
-main = hspec $ do
+spec :: Spec
+spec = do
   describe "A" $ do
     it "Example 1" $ do
       let

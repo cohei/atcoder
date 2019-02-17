@@ -1,16 +1,16 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE QuasiQuotes       #-}
-module Main where
+module AtCoderGrandContest028 (spec) where
 
-import           Test.Hspec               (describe, hspec, it, shouldBe)
+import           Test.Hspec               (Spec, describe, it, shouldBe)
 import           Text.Heredoc             (str)
 
 import qualified AtCoderGrandContest028.A as A (everyN, main)
 import qualified AtCoderGrandContest028.B as B (main)
 import           Test                     (shouldInteractAs)
 
-main :: IO ()
-main = hspec $ do
+spec :: Spec
+spec = do
   describe "A" $ do
     describe "everyN" $ do
       it "take every n elements" $ do

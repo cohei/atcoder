@@ -1,15 +1,15 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE QuasiQuotes       #-}
-module Main where
+module AtCoderGrandContest026 (spec) where
 
-import           Test.Hspec               (describe, hspec, it)
+import           Test.Hspec               (Spec, describe, it)
 import           Text.Heredoc             (str)
 
 import qualified AtCoderGrandContest026.B as B (main)
 import           Test                     (shouldInteractAs)
 
-main :: IO ()
-main = hspec $ do
+spec :: Spec
+spec = do
   describe "B" $ do
     it "Example 1" $ do
       let
