@@ -29,63 +29,8 @@ library:
   source-dirs: src
 
 tests:
-  ABC112:
-    main: test/AtCoderBeginnerContest112.hs
-    dependencies:
-      - atcoder
-      - heredoc
-  AGC028:
-    main: test/AtCoderGrandContest028.hs
-    dependencies:
-      - atcoder
-      - heredoc
-  Tenka1:
-    main: test/Tenka1ProgrammerBeginnerContest.hs
-    dependencies:
-      - atcoder
-      - heredoc
-  ABC113:
-    main: test/AtCoderBeginnerContest113.hs
-    dependencies:
-      - atcoder
-      - heredoc
-  Dwango5:
-    main: test/DwangoProgrammingContestV.hs
-    dependencies:
-      - atcoder
-      - heredoc
-  ABC117:
-    main: test/AtCoderBeginnerContest117.hs
-    dependencies:
-      - atcoder
-      - heredoc
   ABC024:
     main: test/AtCoderBeginnerContest024.hs
-    dependencies:
-      - atcoder
-      - heredoc
-  ABC104:
-    main: test/AtCoderBeginnerContest104.hs
-    dependencies:
-      - atcoder
-      - heredoc
-  ARC045:
-    main: test/AtCoderRegularContest045.hs
-    dependencies:
-      - atcoder
-      - heredoc
-  ARC028:
-    main: test/AtCoderRegularContest028.hs
-    dependencies:
-      - atcoder
-      - heredoc
-  AGC026:
-    main: test/AtCoderGrandContest026.hs
-    dependencies:
-      - atcoder
-      - heredoc
-  ABC110:
-    main: test/AtCoderBeginnerContest110.hs
     dependencies:
       - atcoder
       - heredoc
@@ -94,13 +39,68 @@ tests:
     dependencies:
       - atcoder
       - heredoc
+  ABC104:
+    main: test/AtCoderBeginnerContest104.hs
+    dependencies:
+      - atcoder
+      - heredoc
   ABC105:
     main: test/AtCoderBeginnerContest105.hs
     dependencies:
       - atcoder
       - heredoc
+  ABC110:
+    main: test/AtCoderBeginnerContest110.hs
+    dependencies:
+      - atcoder
+      - heredoc
+  ABC112:
+    main: test/AtCoderBeginnerContest112.hs
+    dependencies:
+      - atcoder
+      - heredoc
+  ABC113:
+    main: test/AtCoderBeginnerContest113.hs
+    dependencies:
+      - atcoder
+      - heredoc
+  ABC117:
+    main: test/AtCoderBeginnerContest117.hs
+    dependencies:
+      - atcoder
+      - heredoc
   ABC118:
     main: test/AtCoderBeginnerContest118.hs
+    dependencies:
+      - atcoder
+      - heredoc
+  AGC026:
+    main: test/AtCoderGrandContest026.hs
+    dependencies:
+      - atcoder
+      - heredoc
+  AGC028:
+    main: test/AtCoderGrandContest028.hs
+    dependencies:
+      - atcoder
+      - heredoc
+  ARC028:
+    main: test/AtCoderRegularContest028.hs
+    dependencies:
+      - atcoder
+      - heredoc
+  ARC045:
+    main: test/AtCoderRegularContest045.hs
+    dependencies:
+      - atcoder
+      - heredoc
+  Dwango5:
+    main: test/DwangoProgrammingContestV.hs
+    dependencies:
+      - atcoder
+      - heredoc
+  Tenka1:
+    main: test/Tenka1ProgrammerBeginnerContest.hs
     dependencies:
       - atcoder
       - heredoc
