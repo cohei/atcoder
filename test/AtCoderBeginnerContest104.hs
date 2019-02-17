@@ -5,9 +5,8 @@ module Main where
 import           Test.Hspec                  (describe, hspec, it)
 import           Text.Heredoc                (str)
 
-import qualified AtCoderBeginnerContest113.A as A (main)
-import qualified AtCoderBeginnerContest113.B as B (main)
-import qualified AtCoderBeginnerContest113.C as C (main)
+import qualified AtCoderBeginnerContest104.A as A (main)
+import qualified AtCoderBeginnerContest104.B as B (main)
 import           Test                        (shouldInteractAs)
 
 main :: IO ()
@@ -16,20 +15,30 @@ main = hspec $ do
     it "Example 1" $ do
       let
         input =
-          [str|81 58
+          [str|1199
               |]
         output =
-          [str|110
+          [str|ABC
               |]
       A.main `shouldInteractAs` (input, output)
 
     it "Example 2" $ do
       let
         input =
-          [str|4 54
+          [str|1200
               |]
         output =
-          [str|31
+          [str|ARC
+              |]
+      A.main `shouldInteractAs` (input, output)
+
+    it "Example 3" $ do
+      let
+        input =
+          [str|4208
+              |]
+        output =
+          [str|AGC
               |]
       A.main `shouldInteractAs` (input, output)
 
@@ -37,54 +46,49 @@ main = hspec $ do
     it "Example 1" $ do
       let
         input =
-          [str|2
-              |12 5
-              |1000 2000
+          [str|AtCoder
               |]
         output =
-          [str|1
+          [str|AC
               |]
       B.main `shouldInteractAs` (input, output)
 
     it "Example 2" $ do
       let
         input =
-          [str|3
-              |21 -11
-              |81234 94124 52141
+          [str|ACoder
               |]
         output =
-          [str|3
+          [str|WA
               |]
       B.main `shouldInteractAs` (input, output)
 
-  describe "C" $ do
-    it "Example 1" $ do
+    it "Example 3" $ do
       let
         input =
-          [str|2 3
-              |1 32
-              |2 63
-              |1 12
+          [str|AcycliC
               |]
         output =
-          [str|000001000002
-              |000002000001
-              |000001000001
+          [str|WA
               |]
-      C.main `shouldInteractAs` (input, output)
+      B.main `shouldInteractAs` (input, output)
 
-    it "Example 2" $ do
+    it "Example 4" $ do
       let
         input =
-          [str|2 3
-              |2 55
-              |2 77
-              |2 99
+          [str|AtCoCo
               |]
         output =
-          [str|000002000001
-              |000002000002
-              |000002000003
+          [str|WA
               |]
-      C.main `shouldInteractAs` (input, output)
+      B.main `shouldInteractAs` (input, output)
+
+    it "Example 5" $ do
+      let
+        input =
+          [str|Atcoder
+              |]
+        output =
+          [str|WA
+              |]
+      B.main `shouldInteractAs` (input, output)

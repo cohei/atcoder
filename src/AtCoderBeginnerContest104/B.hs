@@ -22,19 +22,3 @@ data Result
   = AC
   | WA
   deriving (Show, Eq)
-
-tests :: [Bool]
-tests =
-  [ test1
-  , test2
-  , test3
-  , test4
-  , test5
-  ]
-
-test1, test2, test3, test4, test5 :: Bool
-test1 = f "AtCoder" == AC
-test2 = f "ACoder" == WA
-test3 = f "AcycliC" == WA
-test4 = f "AtCoCo" == WA
-test5 = f "Atcoder" == WA

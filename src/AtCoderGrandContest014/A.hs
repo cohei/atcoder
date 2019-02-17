@@ -7,15 +7,15 @@ main = do
   a : b : c : _ <- map read . words <$> getContents
 
   let
-    series = iterateM f (a, b, c)
+    series = iterateM solve (a, b, c)
     result = if check series then length series - 1 else -1
 
   print result
 
 type Three = (Int, Int, Int)
 
-f :: Three -> Maybe Three
-f (a, b, c)
+solve :: Three -> Maybe Three
+solve (a, b, c)
   | anyOdd a b c = Nothing
   | otherwise = Just ((b + c) `div` 2, (a + c) `div` 2, (a + b) `div` 2)
 

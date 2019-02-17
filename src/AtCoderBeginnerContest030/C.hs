@@ -1,19 +1,18 @@
 module AtCoderBeginnerContest030.C (main) where
 
-import           Control.Applicative  ((<$>))
-import           Control.Monad        (when)
-import           Control.Monad.Reader (ReaderT, runReaderT)
-import           Control.Monad.RWS
-import           Control.Monad.State  (State, gets, runState)
+-- import           Control.Monad.Reader (ReaderT, runReaderT)
+-- import           Control.Monad.State (State, gets, runState)
+import           Control.Monad.RWS (RWS, Sum (getSum), gets, put, runRWS, tell,
+                                    when)
 
 main :: IO ()
 main = do
   _:_:_ <- getLine
   x:y:_ <- map read . words <$> getLine
-  as <- map read . words <$> getLine
-  bs <- map read . words <$> getLine
+  as' <- map read . words <$> getLine
+  bs' <- map read . words <$> getLine
 
-  let ((), _, count) = runRWS f (x,y) (S 0 as bs)
+  let ((), _, count) = runRWS f (x,y) (S 0 as' bs')
   print $ getSum count
 
 data S = S { current :: !Int, as :: ![Int], bs :: ![Int] }
@@ -24,9 +23,9 @@ type TripMonad = RWS (Int, Int) (Sum Int) S
 
 f :: TripMonad ()
 f = do
-  current <- gets current
+  current' <- gets current
   let
-    dropPast = dropWhile (current >)
+    dropPast = dropWhile (current' >)
 
   as' <- dropPast <$> gets as
 

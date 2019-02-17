@@ -33,6 +33,7 @@ tests:
     main: test/AtCoderBeginnerContest112.hs
     dependencies:
       - atcoder
+      - heredoc
   AGC028:
     main: test/AtCoderGrandContest028.hs
     dependencies:
@@ -55,6 +56,46 @@ tests:
       - heredoc
   ABC117:
     main: test/AtCoderBeginnerContest117.hs
+    dependencies:
+      - atcoder
+      - heredoc
+  ABC024:
+    main: test/AtCoderBeginnerContest024.hs
+    dependencies:
+      - atcoder
+      - heredoc
+  ABC104:
+    main: test/AtCoderBeginnerContest104.hs
+    dependencies:
+      - atcoder
+      - heredoc
+  ARC045:
+    main: test/AtCoderRegularContest045.hs
+    dependencies:
+      - atcoder
+      - heredoc
+  ARC028:
+    main: test/AtCoderRegularContest028.hs
+    dependencies:
+      - atcoder
+      - heredoc
+  AGC026:
+    main: test/AtCoderGrandContest026.hs
+    dependencies:
+      - atcoder
+      - heredoc
+  ABC110:
+    main: test/AtCoderBeginnerContest110.hs
+    dependencies:
+      - atcoder
+      - heredoc
+  ABC030:
+    main: test/AtCoderBeginnerContest030.hs
+    dependencies:
+      - atcoder
+      - heredoc
+  ABC105:
+    main: test/AtCoderBeginnerContest105.hs
     dependencies:
       - atcoder
       - heredoc

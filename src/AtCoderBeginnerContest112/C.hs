@@ -24,7 +24,12 @@ f xyhs@((_, _, h0) : _) = head $ do
         ht == h + dx + dy
   return (xt, yt, ht)
 
-test1, test2, test3 :: Bool
-test1 = f [(2, 3, 5), (2, 1, 5), (1, 2, 5), (3, 2, 5)] == (2, 2, 6)
-test2 = f [(0, 0, 100), (1, 1, 98)] == (0, 0, 100)
-test3 = f [(99, 1, 191), (100, 1, 192), (99, 0, 192)] == (100, 0, 193)
+{-
+g :: Int -> Int -> Int -> [[Int]]
+g xi yi hi =
+  [ filter (\h -> 1 <= h && h <= 10 ^ (9 :: Int)) [hi - distance, hi + distance]
+  | x <- [0..100]
+  , y <- [0..100]
+  , let distance = abs (xi - x) + abs (yi - y)
+  ]
+-}

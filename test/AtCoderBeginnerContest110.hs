@@ -5,10 +5,10 @@ module Main where
 import           Test.Hspec                  (describe, hspec, it)
 import           Text.Heredoc                (str)
 
-import qualified AtCoderBeginnerContest112.A as A (main)
-import qualified AtCoderBeginnerContest112.B as B (main)
-import qualified AtCoderBeginnerContest112.C as C (main)
-import qualified AtCoderBeginnerContest112.D as D (main)
+import qualified AtCoderBeginnerContest110.A as A (main)
+import qualified AtCoderBeginnerContest110.B as B (main)
+import qualified AtCoderBeginnerContest110.C as C (main)
+import qualified AtCoderBeginnerContest110.D as D (main)
 import           Test                        (shouldInteractAs)
 
 main :: IO ()
@@ -17,22 +17,30 @@ main = hspec $ do
     it "Example 1" $ do
       let
         input =
-          [str|1
+          [str|1 5 2
               |]
         output =
-          [str|Hello World
+          [str|53
               |]
       A.main `shouldInteractAs` (input, output)
 
     it "Example 2" $ do
       let
         input =
-          [str|2
-              |3
-              |5
+          [str|9 9 9
               |]
         output =
-          [str|8
+          [str|108
+              |]
+      A.main `shouldInteractAs` (input, output)
+
+    it "Example 3" $ do
+      let
+        input =
+          [str|6 6 7
+              |]
+        output =
+          [str|82
               |]
       A.main `shouldInteractAs` (input, output)
 
@@ -40,42 +48,36 @@ main = hspec $ do
     it "Example 1" $ do
       let
         input =
-          [str|3 70
-              |7 60
-              |1 80
-              |4 50
+          [str|3 2 10 20
+              |8 15 13
+              |16 22
               |]
         output =
-          [str|4
+          [str|No War
               |]
       B.main `shouldInteractAs` (input, output)
 
     it "Example 2" $ do
       let
         input =
-          [str|4 3
-              |1 1000
-              |2 4
-              |3 1000
-              |4 500
+          [str|4 2 -48 -1
+              |-20 -35 -91 -23
+              |-22 66
               |]
         output =
-          [str|TLE
+          [str|War
               |]
       B.main `shouldInteractAs` (input, output)
 
     it "Example 3" $ do
       let
         input =
-          [str|5 9
-              |25 8
-              |5 9
-              |4 10
-              |1000 1000
-              |6 1
+          [str|5 3 6 8
+              |-10 3 1 5 -100
+              |100 6 14
               |]
         output =
-          [str|5
+          [str|War
               |]
       B.main `shouldInteractAs` (input, output)
 
@@ -83,39 +85,33 @@ main = hspec $ do
     it "Example 1" $ do
       let
         input =
-          [str|4
-              |2 3 5
-              |2 1 5
-              |1 2 5
-              |3 2 5
+          [str|azzel
+              |apple
               |]
         output =
-          [str|2 2 6
+          [str|Yes
               |]
       C.main `shouldInteractAs` (input, output)
 
     it "Example 2" $ do
       let
         input =
-          [str|2
-              |0 0 100
-              |1 1 98
+          [str|chokudai
+              |redcoder
               |]
         output =
-          [str|0 0 100
+          [str|No
               |]
       C.main `shouldInteractAs` (input, output)
 
     it "Example 3" $ do
       let
         input =
-          [str|3
-              |99 1 191
-              |100 1 192
-              |99 0 192
+          [str|abcdefghijklmnopqrstuvwxyz
+              |ibyhqfrekavclxjstdwgpzmonu
               |]
         output =
-          [str|100 0 193
+          [str|Yes
               |]
       C.main `shouldInteractAs` (input, output)
 
@@ -123,20 +119,20 @@ main = hspec $ do
     it "Example 1" $ do
       let
         input =
-          [str|3 14
+          [str|2 6
               |]
         output =
-          [str|2
+          [str|4
               |]
       D.main `shouldInteractAs` (input, output)
 
     it "Example 2" $ do
       let
         input =
-          [str|10 123
+          [str|3 12
               |]
         output =
-          [str|3
+          [str|18
               |]
       D.main `shouldInteractAs` (input, output)
 
@@ -146,6 +142,6 @@ main = hspec $ do
           [str|100000 1000000000
               |]
         output =
-          [str|10000
+          [str|957870001
               |]
       D.main `shouldInteractAs` (input, output)

@@ -4,7 +4,7 @@ import           Data.List
 
 main :: IO ()
 main = do
-  nStirng : nsString : _ <- lines <$> getContents
+  _nStirng : nsString : _ <- lines <$> getContents
 
   let
     -- n =  read nStirng

@@ -40,12 +40,6 @@ factorial :: (Eq a, Num a) => a -> a
 factorial 0 = 1
 factorial n = n * factorial (n - 1)
 
-tests, test1, test2, test3 :: Bool
-tests = test1 && test2 && test3
-test1 = f 2 6 == 4
-test2 = f 3 12 == 18
-test3 = f 100000 1000000000 == 957870001
-
 newtype Modular a (modulus :: Nat) =
   Modular { unModular :: a }
   deriving (Eq)

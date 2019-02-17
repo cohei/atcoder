@@ -2,8 +2,7 @@
 {-# LANGUAGE QuasiQuotes       #-}
 module Main where
 
-import           Test.Hspec                        (describe, hspec, it,
-                                                    shouldBe)
+import           Test.Hspec                        (describe, hspec, it)
 import           Text.Heredoc                      (str)
 
 import qualified Tenka1ProgrammerBeginnerContest.A as A (main)

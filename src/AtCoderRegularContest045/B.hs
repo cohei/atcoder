@@ -1,13 +1,12 @@
-{-# LANGUAGE ImpredicativeTypes #-}
-{-# LANGUAGE RankNTypes         #-}
 module AtCoderRegularContest045.B (main) where
 
-import           Control.Monad    (replicateM)
-import           Control.Monad.ST (ST)
-import           Data.Array.ST
-import           Data.IntMap      (IntMap)
-import qualified Data.IntMap      as M
-import           Data.List        (foldl')
+import           Control.Monad (replicateM)
+-- import           Control.Monad.ST (ST)
+-- import           Data.Array.ST (Ix, MArray, STUArray, newArray, readArray,
+--                                 writeArray)
+import           Data.IntMap   (IntMap)
+import qualified Data.IntMap   as M
+-- import           Data.List        (foldl')
 
 main :: IO ()
 main = do
@@ -37,6 +36,7 @@ parseNumbers s = let n:m:_ = map read $ words s in (n,m)
 parseSection :: Int -> String -> Section
 parseSection i s = let (f,l) = parseNumbers s in Section i f l
 
+{-
 isCovered :: Int -> [Section] -> Bool
 isCovered numberOfRooms sections = null $ foldl' clean [1..numberOfRooms] sections
 
@@ -46,6 +46,7 @@ clean is section = filter (\r -> r < firstRoom section || lastRoom section < r) 
 removeOnes :: [a] -> [(a,[a])]
 removeOnes []     = []
 removeOnes (x:xs) = (x,xs) : map (\(y,ys) -> (y, x:ys)) (removeOnes xs)
+-}
 
 recordInOut :: [Section] -> IntMap Int
 recordInOut = M.fromListWith (+) . concatMap sectionToInOut
@@ -58,11 +59,12 @@ roomCleanedTimes numberOfRooms record =
   scanl1 (+) $ map (\key -> M.findWithDefault 0 key record) [1..numberOfRooms]
 
 roomCleanedMultipleTimes :: Section -> [Int] -> Bool
-roomCleanedMultipleTimes section = all (> 1) . take (last - first + 1) . drop (first - 1)
+roomCleanedMultipleTimes section = all (> 1) . take (last' - first + 1) . drop (first - 1)
   where
     first = firstRoom section
-    last = lastRoom section
+    last' = lastRoom section
 
+{-
 accumulatedOnlyOnceCleanedRooms :: [Int] -> [Int]
 accumulatedOnlyOnceCleanedRooms = scanl1 (+) . map (\n -> if n > 1 then 0 else 1)
 
@@ -77,6 +79,7 @@ roomCleanedMultipleTimes' accRooms sections = undefined
 (!!!) :: [a] -> [Int] -> [a]
 _  !!! []     = []
 xs !!! (i:is) = let y:ys = drop i xs in y : ys !!! map (subtract (i + 1)) is
+-}
 
 
 -- type Memo a = forall r. (a -> r) -> (a -> r)
@@ -86,6 +89,7 @@ xs !!! (i:is) = let y:ys = drop i xs in y : ys !!! map (subtract (i + 1)) is
 
 
 --- imos
+{-
 type Rooms s = STUArray s Int Int
 
 newRooms :: Int -> ST s (Rooms s)
@@ -99,7 +103,6 @@ cleanImos section rooms = do
 modifyArray :: (Ix i, MArray a e m) => a i e -> i -> (e -> e) -> m ()
 modifyArray array ix f = writeArray array ix . f =<< readArray array ix
 
-{-
 cleanAll :: [Section] -> Room s -> ST s (Rooms s)
 cleanAll sections rooms = do
   mapM_ (flip cleanImos rooms) sections

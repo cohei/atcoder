@@ -16,7 +16,7 @@ totalOpenTime openTime = sum . map (sequentOpenTime openTime) . groupSequent ope
 
 groupSequent :: Int -> [Int] -> [[Int]]
 groupSequent _ [] = []
-groupSequent d (x:xs) = map reverse $ aux [[x]] xs
+groupSequent d (n:ns) = map reverse $ aux [[n]] ns
   where
     isSeq x y = abs (x - y) < d
 
@@ -24,6 +24,7 @@ groupSequent d (x:xs) = map reverse $ aux [[x]] xs
     aux acc@(zs@(z:_):zss) (x:xs)
       | isSeq x z = aux ((x:zs):zss) xs
       | otherwise = aux ([x]:acc) xs
+    aux _ _ = undefined
 
 sequentOpenTime :: Int -> [Int] -> Int
 sequentOpenTime openTime ts =
@@ -31,10 +32,3 @@ sequentOpenTime openTime ts =
     first = head ts
     last' = last ts
   in last' - first + openTime
-
-
-test1 = totalOpenTime 10 [20, 100, 105, 217, 314] == 45
-
-test2 = totalOpenTime 10 [1..10] == 19
-
-test3 = totalOpenTime 100000 [3, 31, 314, 3141, 31415, 314159, 400000, 410000, 500000, 777777] == 517253
