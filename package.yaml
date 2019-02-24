@@ -40,7 +40,7 @@ library:
 tests:
   atcoder-test:
     source-dirs: test
-    main: Spec.hs
+    main: Main.hs
     dependencies:
       - atcoder
       - bytestring
