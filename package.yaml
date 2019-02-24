@@ -32,6 +32,7 @@ dependencies:
   - array
   - containers
   - mtl
+  - time
 
 library:
   source-dirs: src

@@ -9,6 +9,7 @@ import qualified AtCoderBeginnerContest112       (spec)
 import qualified AtCoderBeginnerContest113       (spec)
 import qualified AtCoderBeginnerContest117       (spec)
 import qualified AtCoderBeginnerContest118       (spec)
+import qualified AtCoderBeginnerContest119       (spec)
 import qualified AtCoderGrandContest026          (spec)
 import qualified AtCoderGrandContest028          (spec)
 import qualified AtCoderRegularContest028        (spec)
@@ -27,6 +28,7 @@ main = hspec $ do
   describe "AtCoderBeginnerContest113" AtCoderBeginnerContest113.spec
   describe "AtCoderBeginnerContest117" AtCoderBeginnerContest117.spec
   describe "AtCoderBeginnerContest118" AtCoderBeginnerContest118.spec
+  describe "AtCoderBeginnerContest119" AtCoderBeginnerContest119.spec
   describe "AtCoderGrandContest026" AtCoderGrandContest026.spec
   describe "AtCoderGrandContest028" AtCoderGrandContest028.spec
   describe "AtCoderRegularContest028" AtCoderRegularContest028.spec
