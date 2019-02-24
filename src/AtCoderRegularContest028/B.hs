@@ -7,7 +7,11 @@ main :: IO ()
 main = interact $ format solve
 
 format :: ((Int, Int, [Int]) -> [Int]) -> (String -> String)
-format f = unlines . map show . f . (\((n:k:_):is:_) -> (n,k,is)) . map (map read . words) . lines
+format f = unlines . map show . f . format' . map (map read . words) . lines
+
+format' :: [[Int]] -> (Int, Int, [Int])
+format' [[n, k], is] = (n, k, is)
+format' _            = error "unexpected format"
 
 -- solve :: (Int, Int, [Int]) -> [Int]
 -- solve (n,k,is) = map secondYoung $ drop k $ inits $ zip [1..] is

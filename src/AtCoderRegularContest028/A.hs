@@ -4,7 +4,11 @@ main :: IO ()
 main = interact $ (++"\n") . show . f . format
 
 format :: String -> (Int, Int, Int)
-format = (\(n:a:b:_) -> (n,a,b)) . map read . words . head . lines
+format = format' . map read . words . head . lines
+
+format' :: [Int] -> (Int, Int, Int)
+format' [n, a, b] = (n, a, b)
+format' _         = error "unexpected format"
 
 f :: (Int, Int, Int) -> Player
 f (n, a, b) = h n a b

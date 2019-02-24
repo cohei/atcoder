@@ -10,13 +10,11 @@ import qualified Data.IntMap   as M
 
 main :: IO ()
 main = do
-  numbersString <- getLine
-
-  let (numberOfRooms, numberOfStudents) = parseNumbers numbersString
-
-  sectionsString <- replicateM numberOfStudents getLine
-
-  let sections = map (uncurry parseSection) $ zip [1..] sectionsString
+  [numberOfRooms, numberOfStudents] <- map read . words <$> getLine
+  sectionParams <- replicateM numberOfStudents $ do
+    [f, l] <- map read . words <$> getLine
+    pure (f, l)
+  let sections = zipWith (\i (f, l) -> Section i f l) [1..] sectionParams
 
   -- let answers = map (number . fst) $ filter (isCovered numberOfRooms . snd) $ removeOnes sections
   let
@@ -29,12 +27,6 @@ main = do
 
 data Section = Section { number :: Int, firstRoom :: Int, lastRoom :: Int }
              deriving Show
-
-parseNumbers :: String -> (Int, Int)
-parseNumbers s = let n:m:_ = map read $ words s in (n,m)
-
-parseSection :: Int -> String -> Section
-parseSection i s = let (f,l) = parseNumbers s in Section i f l
 
 {-
 isCovered :: Int -> [Section] -> Bool
