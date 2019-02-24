@@ -2,7 +2,6 @@ import           Test.Hspec                      (describe, hspec)
 
 import qualified Spec                            (spec)
 
-import qualified AtCoderBeginnerContest024       (spec)
 import qualified AtCoderBeginnerContest030       (spec)
 import qualified AtCoderBeginnerContest104       (spec)
 import qualified AtCoderBeginnerContest105       (spec)
@@ -22,7 +21,6 @@ import qualified Tenka1ProgrammerBeginnerContest (spec)
 main :: IO ()
 main = hspec $ do
   Spec.spec
-  describe "AtCoderBeginnerContest024" AtCoderBeginnerContest024.spec
   describe "AtCoderBeginnerContest030" AtCoderBeginnerContest030.spec
   describe "AtCoderBeginnerContest104" AtCoderBeginnerContest104.spec
   describe "AtCoderBeginnerContest105" AtCoderBeginnerContest105.spec
