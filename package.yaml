@@ -33,6 +33,7 @@ dependencies:
   - containers
   - mtl
   - time
+  - vector
 
 library:
   source-dirs: src
