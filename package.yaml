@@ -41,7 +41,7 @@ library:
 tests:
   atcoder-test:
     source-dirs: test
-    main: Main.hs
+    main: Spec.hs
     dependencies:
       - atcoder
       - bytestring
