@@ -2,21 +2,14 @@
 {-# LANGUAGE QuasiQuotes       #-}
 module AtCoderBeginnerContest119.CSpec (spec) where
 
-import           Test.Hspec                  (Spec, describe, it, shouldBe)
+import           Test.Hspec                  (Spec, it)
 import           Text.Heredoc                (str)
 
-import           AtCoderBeginnerContest119.C (isSynthesyzed, main)
+import           AtCoderBeginnerContest119.C (main)
 import           Test                        (shouldInteractAs)
 
 spec :: Spec
 spec = do
-  describe "isSynthesyzed" $ do
-    it "determines synthesis finished" $
-      isSynthesyzed (10, 20, 30) [1..100] `shouldBe` True
-
-    it "determines synthesis not finished" $
-      isSynthesyzed (10, 20, 30) [1..29] `shouldBe` False
-
   it "Example 1" $ do
     let
       input =
