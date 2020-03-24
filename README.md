@@ -1,1 +1,1 @@
-# [AtCoder](https://beta.atcoder.jp)
+# [AtCoder](https://atcoder.jp)
