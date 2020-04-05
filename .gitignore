@@ -1,2 +1,2 @@
-atcoder.cabal*
-dist-newstyle/
+/atcoder.cabal
+/dist-newstyle/
