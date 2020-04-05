@@ -48,3 +48,5 @@ tests:
       - heredoc
       - hspec
       - main-tester
+    build-tools:
+      - hspec-discover

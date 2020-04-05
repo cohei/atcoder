@@ -1,5 +1,0 @@
-resolver: lts-6.35  # ghc-7.10.3
-packages:
-  - .
-extra-deps:
-  - main-tester-0.2.0.1

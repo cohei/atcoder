@@ -1,0 +1,6 @@
+packages: .
+
+with-compiler: ghc-7.10.3
+
+test-options: "--color"
+test-show-details: streaming
