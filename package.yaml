@@ -29,14 +29,15 @@ ghc-options:
 
 dependencies:
   - base >= 4.7 && < 5
-  - array
-  - containers
-  - mtl
-  - time
-  - vector
 
 library:
   source-dirs: src
+  dependencies:
+    - array
+    - containers
+    - mtl
+    - time
+    - vector
 
 tests:
   atcoder-test:
