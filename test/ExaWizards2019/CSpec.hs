@@ -2,6 +2,7 @@
 {-# LANGUAGE QuasiQuotes       #-}
 module ExaWizards2019.CSpec (spec) where
 
+import           Data.ByteString  (ByteString)
 import           Test.Hspec       (Spec, it, shouldBe)
 import           Text.Heredoc     (str)
 
@@ -12,6 +13,7 @@ spec :: Spec
 spec = do
   it "Example 1" $ do
     let
+      input, output :: ByteString
       input =
         [str|3 4
             |ABC
@@ -27,6 +29,7 @@ spec = do
 
   it "Example 2" $ do
     let
+      input, output :: ByteString
       input =
         [str|8 3
             |AABCBDBA
@@ -41,6 +44,7 @@ spec = do
 
   it "Example 3" $ do
     let
+      input, output :: ByteString
       input =
         [str|10 15
             |SNCZWRCEWB

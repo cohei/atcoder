@@ -2,6 +2,7 @@
 {-# LANGUAGE QuasiQuotes       #-}
 module DwangoProgrammingContestV.CSpec (spec) where
 
+import           Data.ByteString             (ByteString)
 import           Test.Hspec                  (Spec, it, shouldBe)
 import           Text.Heredoc                (str)
 
@@ -12,6 +13,7 @@ spec :: Spec
 spec = do
   it "Example 1" $ do
     let
+      input, output :: ByteString
       input =
         [str|18
             |DWANGOMEDIACLUSTER
@@ -25,6 +27,7 @@ spec = do
 
   it "Example 2" $ do
     let
+      input, output :: ByteString
       input =
         [str|18
             |DDDDDDMMMMMCCCCCCC
@@ -38,6 +41,7 @@ spec = do
 
   it "Example 3" $ do
     let
+      input, output :: ByteString
       input =
         [str|54
             |DIALUPWIDEAREANETWORKGAMINGOPERATIONCORPORATIONLIMITED
@@ -53,6 +57,7 @@ spec = do
 
   it "Example 4" $ do
     let
+      input, output :: ByteString
       input =
         [str|30
             |DMCDMCDMCDMCDMCDMCDMCDMCDMCDMC

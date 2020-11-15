@@ -2,6 +2,7 @@
 {-# LANGUAGE QuasiQuotes       #-}
 module AtCoderRegularContest045.ASpec (spec) where
 
+import           Data.ByteString            (ByteString)
 import           Test.Hspec                 (Spec, it, shouldBe)
 import           Text.Heredoc               (str)
 
@@ -12,6 +13,7 @@ spec :: Spec
 spec = do
   it "Example 1" $ do
     let
+      input, output :: ByteString
       input =
         [str|Left Right AtCoder
             |]
@@ -22,6 +24,7 @@ spec = do
 
   it "Example 2" $ do
     let
+      input, output :: ByteString
       input =
         [str|Left Left Right Right AtCoder
             |]
@@ -32,6 +35,7 @@ spec = do
 
   it "Example 3" $ do
     let
+      input, output :: ByteString
       input =
         [str|Right Right AtCoder Left Left AtCoder
             |]

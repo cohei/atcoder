@@ -2,6 +2,7 @@
 {-# LANGUAGE QuasiQuotes       #-}
 module AtCoderBeginnerContest120.BSpec (spec) where
 
+import           Data.ByteString             (ByteString)
 import           Test.Hspec                  (Spec, describe, it, shouldBe)
 import           Text.Heredoc                (str)
 
@@ -16,6 +17,7 @@ spec = do
 
   it "Example 1" $ do
     let
+      input, output :: ByteString
       input =
         [str|8 12 2
             |]
@@ -26,6 +28,7 @@ spec = do
 
   it "Example 2" $ do
     let
+      input, output :: ByteString
       input =
         [str|100 50 4
             |]
@@ -36,6 +39,7 @@ spec = do
 
   it "Example 3" $ do
     let
+      input, output :: ByteString
       input =
         [str|1 1 1
             |]
