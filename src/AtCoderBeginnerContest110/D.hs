@@ -5,7 +5,7 @@ module AtCoderBeginnerContest110.D (main) where
 
 import           Data.List    (group)
 import           Data.Ratio   (denominator, numerator)
-import           GHC.TypeLits (KnownNat, Nat, natVal, type (+), type (^))
+import           GHC.TypeLits (type (+), KnownNat, Nat, type (^), natVal)
 
 main :: IO ()
 main = do
@@ -84,4 +84,6 @@ modularReciprocal modulus n = snd $ modularReciprocal' modulus n
         , parentheses $ showIntegral modulus
         ]
     parentheses s = "(" ++ s ++ ")"
+
+    showIntegral :: Integral a => a -> String
     showIntegral = show . toInteger

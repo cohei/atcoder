@@ -1,3 +1,4 @@
+{-# LANGUAGE ScopedTypeVariables #-}
 module AtCoderBeginnerContest110.C (main) where
 
 import           Data.Function (on)
@@ -13,7 +14,8 @@ main = do
 f :: String -> String -> Bool
 f = (==) `on` normalize
 
-normalize :: Eq a => [a] -> [Int]
-normalize xs = mapMaybe (flip lookup table) xs
+normalize :: forall a. Eq a => [a] -> [Int]
+normalize xs = mapMaybe (`lookup` table) xs
   where
+    table :: [(a, Int)]
     table = zip (nub xs) [0..]
