@@ -1,12 +1,12 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE QuasiQuotes       #-}
-module AtCoderBeginnerContest183.CSpec (spec) where
+module AtCoderBeginnerContest183.ASpec (spec) where
 
 import           Data.ByteString             (ByteString)
 import           Test.Hspec                  (Spec, it, shouldBe)
 import           Text.Heredoc                (str)
 
-import           AtCoderBeginnerContest183.C (main)
+import           AtCoderBeginnerContest183.A (main)
 import           Test                        (runWith)
 
 spec :: Spec
@@ -15,14 +15,10 @@ spec = do
     let
       input, output :: ByteString
       input =
-        [str|4 330
-            |0 1 10 100
-            |1 0 20 200
-            |10 20 0 300
-            |100 200 300 0
+        [str|1
             |]
       output =
-        [str|2
+        [str|1
             |]
     main `runWith` input $ (`shouldBe` output)
 
@@ -30,14 +26,20 @@ spec = do
     let
       input, output :: ByteString
       input =
-        [str|5 5
-            |0 1 1 1 1
-            |1 0 1 1 1
-            |1 1 0 1 1
-            |1 1 1 0 1
-            |1 1 1 1 0
+        [str|0
             |]
       output =
-        [str|24
+        [str|0
+            |]
+    main `runWith` input $ (`shouldBe` output)
+
+  it "Example 3" $ do
+    let
+      input, output :: ByteString
+      input =
+        [str|-1
+            |]
+      output =
+        [str|0
             |]
     main `runWith` input $ (`shouldBe` output)
