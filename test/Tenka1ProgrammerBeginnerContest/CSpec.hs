@@ -2,11 +2,11 @@
 {-# LANGUAGE QuasiQuotes       #-}
 module Tenka1ProgrammerBeginnerContest.CSpec (spec) where
 
-import           Test.Hspec                        (Spec, it)
+import           Test.Hspec                        (Spec, it, shouldBe)
 import           Text.Heredoc                      (str)
 
 import           Tenka1ProgrammerBeginnerContest.C (main)
-import           Test                              (shouldInteractAs)
+import           Test                              (runWith)
 
 spec :: Spec
 spec = do
@@ -23,7 +23,7 @@ spec = do
       output =
         [str|21
             |]
-    main `shouldInteractAs` (input, output)
+    main `runWith` input $ (`shouldBe` output)
 
   it "Example 2" $ do
     let
@@ -39,7 +39,7 @@ spec = do
       output =
         [str|25
             |]
-    main `shouldInteractAs` (input, output)
+    main `runWith` input $ (`shouldBe` output)
 
   it "Example 3" $ do
     let
@@ -52,4 +52,4 @@ spec = do
       output =
         [str|8
             |]
-    main `shouldInteractAs` (input, output)
+    main `runWith` input $ (`shouldBe` output)

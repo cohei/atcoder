@@ -2,11 +2,11 @@
 {-# LANGUAGE QuasiQuotes       #-}
 module DwangoProgrammingContestV.BSpec (spec) where
 
-import           Test.Hspec                  (Spec, it)
+import           Test.Hspec                  (Spec, it, shouldBe)
 import           Text.Heredoc                (str)
 
 import           DwangoProgrammingContestV.B (main)
-import           Test                        (shouldInteractAs)
+import           Test                        (runWith)
 
 spec :: Spec
 spec = do
@@ -19,7 +19,7 @@ spec = do
       output =
         [str|12
             |]
-    main `shouldInteractAs` (input, output)
+    main `runWith` input $ (`shouldBe` output)
 
   it "Example 2" $ do
     let
@@ -30,4 +30,4 @@ spec = do
       output =
         [str|32
             |]
-    main `shouldInteractAs` (input, output)
+    main `runWith` input $ (`shouldBe` output)

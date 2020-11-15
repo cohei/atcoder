@@ -2,11 +2,11 @@
 {-# LANGUAGE QuasiQuotes       #-}
 module AtCoderBeginnersSelection.ABC049CSpec (spec) where
 
-import           Test.Hspec                        (Spec, it)
+import           Test.Hspec                        (Spec, it, shouldBe)
 import           Text.Heredoc                      (str)
 
 import           AtCoderBeginnersSelection.ABC049C (main)
-import           Test                              (shouldInteractAs)
+import           Test                              (runWith)
 
 spec :: Spec
 spec = do
@@ -18,7 +18,7 @@ spec = do
       output =
         [str|YES
             |]
-    main `shouldInteractAs` (input, output)
+    main `runWith` input $ (`shouldBe` output)
 
   it "Example 2" $ do
     let
@@ -28,7 +28,7 @@ spec = do
       output =
         [str|YES
             |]
-    main `shouldInteractAs` (input, output)
+    main `runWith` input $ (`shouldBe` output)
 
   it "Example 3" $ do
     let
@@ -38,4 +38,4 @@ spec = do
       output =
         [str|NO
             |]
-    main `shouldInteractAs` (input, output)
+    main `runWith` input $ (`shouldBe` output)

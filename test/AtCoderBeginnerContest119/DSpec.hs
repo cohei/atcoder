@@ -2,11 +2,11 @@
 {-# LANGUAGE QuasiQuotes       #-}
 module AtCoderBeginnerContest119.DSpec (spec) where
 
-import           Test.Hspec                  (Spec, it)
+import           Test.Hspec                  (Spec, it, shouldBe)
 import           Text.Heredoc                (str)
 
 import           AtCoderBeginnerContest119.D (main)
-import           Test                        (shouldInteractAs)
+import           Test                        (runWith)
 
 spec :: Spec
 spec = do
@@ -30,7 +30,7 @@ spec = do
             |301
             |399
             |]
-    main `shouldInteractAs` (input, output)
+    main `runWith` input $ (`shouldBe` output)
 
   it "Example 2" $ do
     let
@@ -47,4 +47,4 @@ spec = do
             |10000000000
             |14999999998
             |]
-    main `shouldInteractAs` (input, output)
+    main `runWith` input $ (`shouldBe` output)

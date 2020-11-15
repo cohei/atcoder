@@ -1,14 +1,14 @@
 {-# LANGUAGE NamedFieldPuns #-}
-module Test (shouldInteractAs) where
+module Test (runWith) where
 
 import           Control.Exception (throwIO)
 import           Data.ByteString   (ByteString)
-import           Test.Hspec        (shouldBe)
+import           Test.Hspec        (Expectation)
 import           Test.Main         (ProcessResult (ProcessResult, prException, prStdout),
                                     captureProcessResult, withStdin)
 
-shouldInteractAs :: IO () -> (ByteString, ByteString) -> IO ()
-shouldInteractAs action (input, output) = do
+runWith :: IO () -> ByteString -> (ByteString -> Expectation) -> IO ()
+runWith action input expectation = do
   ProcessResult { prException, prStdout } <- captureProcessResult $ withStdin input action
   maybe (pure ()) throwIO prException
-  prStdout `shouldBe` output
+  expectation prStdout

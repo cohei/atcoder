@@ -6,7 +6,7 @@ import           Test.Hspec                  (Spec, describe, it, shouldBe)
 import           Text.Heredoc                (str)
 
 import           AtCoderBeginnerContest120.B (canDivide, main)
-import           Test                        (shouldInteractAs)
+import           Test                        (runWith)
 
 spec :: Spec
 spec = do
@@ -22,7 +22,7 @@ spec = do
       output =
         [str|2
             |]
-    main `shouldInteractAs` (input, output)
+    main `runWith` input $ (`shouldBe` output)
 
   it "Example 2" $ do
     let
@@ -32,7 +32,7 @@ spec = do
       output =
         [str|5
             |]
-    main `shouldInteractAs` (input, output)
+    main `runWith` input $ (`shouldBe` output)
 
   it "Example 3" $ do
     let
@@ -42,4 +42,4 @@ spec = do
       output =
         [str|1
             |]
-    main `shouldInteractAs` (input, output)
+    main `runWith` input $ (`shouldBe` output)

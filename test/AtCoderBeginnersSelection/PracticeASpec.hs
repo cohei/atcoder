@@ -2,11 +2,11 @@
 {-# LANGUAGE QuasiQuotes       #-}
 module AtCoderBeginnersSelection.PracticeASpec (spec) where
 
-import           Test.Hspec                          (Spec, it)
+import           Test.Hspec                          (Spec, it, shouldBe)
 import           Text.Heredoc                        (str)
 
 import           AtCoderBeginnersSelection.PracticeA (main)
-import           Test                                (shouldInteractAs)
+import           Test                                (runWith)
 
 spec :: Spec
 spec = do
@@ -20,7 +20,7 @@ spec = do
       output =
         [str|6 test
             |]
-    main `shouldInteractAs` (input, output)
+    main `runWith` input $ (`shouldBe` output)
 
   it "Example 2" $ do
     let
@@ -32,4 +32,4 @@ spec = do
       output =
         [str|456 myonmyon
             |]
-    main `shouldInteractAs` (input, output)
+    main `runWith` input $ (`shouldBe` output)

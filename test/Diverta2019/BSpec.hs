@@ -2,11 +2,11 @@
 {-# LANGUAGE QuasiQuotes       #-}
 module Diverta2019.BSpec (spec) where
 
-import           Test.Hspec    (Spec, it)
+import           Test.Hspec    (Spec, it, shouldBe)
 import           Text.Heredoc  (str)
 
 import           Diverta2019.B (main)
-import           Test          (shouldInteractAs)
+import           Test          (runWith)
 
 spec :: Spec
 spec = do
@@ -18,7 +18,7 @@ spec = do
       output =
         [str|4
             |]
-    main `shouldInteractAs` (input, output)
+    main `runWith` input $ (`shouldBe` output)
 
   it "Example 2" $ do
     let
@@ -28,4 +28,4 @@ spec = do
       output =
         [str|87058
             |]
-    main `shouldInteractAs` (input, output)
+    main `runWith` input $ (`shouldBe` output)
