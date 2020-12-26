@@ -1,15 +1,6 @@
 name: atcoder
 version: 0.1.0.0
-github: cohei/atcoder
 license: BSD3
-author: TANIGUCHI Kohei
-maintainer: a.d.xvii.kal.mai@gmail.com
-copyright: 2018 TANIGUCHI Kohei
-
-extra-source-files:
-  - README.md
-
-description: Please see the README on GitHub at <https://github.com/cohei/atcoder#readme>
 
 ghc-options:
   - -Wall
