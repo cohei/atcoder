@@ -2,25 +2,6 @@ name: atcoder
 version: 0.1.0.0
 license: BSD3
 
-ghc-options:
-  - -Wall
-  - -Wcompat
-  - -fdefer-typed-holes
-
-  # https://downloads.haskell.org/~ghc/8.8.3/docs/html/users_guide/using-warnings.html#ghc-flag--Wall
-  # The warnings that are not enabled by `-Wall`
-  - -Widentities
-  - -Wincomplete-record-updates
-  - -Wincomplete-uni-patterns
-  - -Wmissing-export-lists
-  - -Wmissing-exported-signatures
-  - -Wmissing-home-modules
-  - -Wmissing-import-lists
-  - -Wmissing-local-signatures
-  - -Wmonomorphism-restriction
-  - -Wpartial-fields
-  - -Wredundant-constraints
-
 # available libraries at AtCoder
 # https://atcoder.jp/contests/language-test-202001
 dependencies:
