@@ -12,7 +12,6 @@ package *
   ghc-options:
     -Wall
     -Wcompat
-    -fdefer-typed-holes
 
     -- https://downloads.haskell.org/~ghc/8.8.3/docs/html/users_guide/using-warnings.html#ghc-flag--Wall
     -- The warnings that are not enabled by `-Wall`

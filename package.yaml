@@ -12,6 +12,8 @@ library:
     - parsec
     - time
     - vector
+  ghc-options:
+    - -fdefer-typed-holes
 
 tests:
   atcoder-test:
