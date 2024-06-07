@@ -1,9 +1,10 @@
 module AtCoderBeginnerContest030.C (main) where
 
+import           Control.Monad     (when)
 -- import           Control.Monad.Reader (ReaderT, runReaderT)
 -- import           Control.Monad.State (State, gets, runState)
-import           Control.Monad.RWS (RWS, Sum (getSum), gets, put, runRWS, tell,
-                                    when)
+import           Control.Monad.RWS (RWS, gets, put, runRWS, tell)
+import           Data.Monoid       (Sum (getSum))
 
 main :: IO ()
 main = do
