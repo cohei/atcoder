@@ -28,3 +28,9 @@ tests:
       - main-tester
     build-tools:
       - hspec-discover
+
+executables:
+  abc066-b:
+    main: app/abc066/b/Main.hs
+    dependencies:
+      - base
