@@ -2,7 +2,7 @@ cabal-version: 3.0
 name:          abc066-b
 version:       0.1.0.0
 
-executable hoo
+executable solve
   main-is:          Main.hs
   build-depends:    base
   default-language: Haskell2010
