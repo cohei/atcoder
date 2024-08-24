@@ -1,4 +1,4 @@
-packages: .
+packages: . contests/*
 
 -- https://img.atcoder.jp/file/language-update/language-list.html
 -- 9.4.5
